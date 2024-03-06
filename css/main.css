@@ -37,16 +37,18 @@ body {
 
 #canvas-container {
     position: fixed;
-    right: 25px; /* 画面の右端から25pxの位置に配置 */
-    bottom: 25px; /* 下側から25pxの位置に配置 */
-    width: calc(100vh - 50px); /* ビューポートの高さから50px引いた値（上下の余白合計） */
-    height: calc(100vh - 50px); /* 同上、正方形を保つ */
+    top: 50%; /* 上側からビューポートの中央に配置 */
+    right: 2%; /* 画面の右端から25pxの位置に配置 */
+    width: calc(90vh); /* ビューポートの高さの90% */
+    height: calc(90vh); /* 同上、正方形を保つ */
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: calc(100vw - 50px); /* ビューポートの幅から50px引いた最大値、右側の余白を保つため */
-    max-height: calc(100vw - 50px); /* 同上 */
+    max-width: calc(90vw); /* ビューポートの幅の90% */
+    max-height: calc(90vw); /* 同上 */
+    transform: translateY(-50%); /* Y軸方向に自身の高さの50%だけ上に移動 */
 }
+
 
 
   
