@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>fPtP</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="./lib/vue.global.prod.js"></script>
+
+  </head>
+  <body>
+    <div class="panel-left">
+      <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =  -->
+      <section class="ui-group" id="world">
+          <label class="ui-subtitle">size</label>
+          <div class="container">
+            <button class="range-button" @click="config.size = 450; updateWorld">S</button>
+            <input
+              type="range"
+              min="200"
+              max="800"
+              step="10"
+              v-model.number="config.size"
+              @input="updateWorld"
+            />
+            <input
+              type="number"
+              class="range-value no-spin"
+              v-model.number="config.size"
+              @change="updateWorld"
+            />
+          </div>
+          <label class="ui-subtitle">step</label>
+          <div class="container">
+            <button class="range-button" @click="config.step = 9; updateWorld">St</button>
+            <input
+              type="range"
+              min="9"
+              max="100"
+              step="1"
+              v-model.number="config.step"
+              @input="updateWorld"
+            />
+            <input
+              type="number"
+              max="100"
+              class="range-value no-spin"
+              v-model.number="config.step"
+              @change="updateWorld"
+            />
+          </div>
+          <label class="ui-subtitle">diameter</label>
+          <div class="container">
+            <button class="range-button" @click="config.diameter = 10; updateWorld">D</button>
+            <input
+              type="range"
+              min="5"
+              max="200"
+              step="1"
+              v-model.number="config.diameter"
+              @input="updateWorld"
+            />
+            <input
+              type="number"
+              max="200"
+              class="range-value no-spin"
+              v-model.number="config.diameter"
+              @change="updateWorld"
+            />
+          </div>
+          <label class="ui-subtitle">ratio</label>
+          <div class="container">
+            <button class="range-button" @click="config.ratio = 50; updateWorld">R</button>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              step="1"
+              v-model.number="config.ratio"
+              @input="updateWorld"
+            />
+            <input
+              type="number"
+              max="100"
+              class="range-value no-spin"
+              v-model.number="config.ratio"
+              @change="updateWorld"
+            />
+          </div>
+          <div class="color-picker-container">
+            <input type="color" v-model="config.windowBgC" class="rectangular-picker" @input="updateWorld" />
+            <input type="color" v-model="config.bgC" class="square-picker" @input="updateWorld" />
+            <input type="color" v-model="config.CircleC" class="circle-picker" @input="updateWorld" />
+        </div>               
+      </section>
+    </section>
+      </section>
+      <section class="ui-group" id="info">
+        <div class="description-container">
+            <p class="description">
+                OpenProcessing <a href="https://openprocessing.org/sketch/2193023">from Point to A Plane</a>.<br />
+                Created by <a href="https://www.instagram.com/ryotaro_yamada51/">RyotaroYamada</a>.<br />
+            </p>
+        </div>
+    </section>    
+      <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =  -->
+    </div>
+    <div id="canvas-container"></div>
+    <div class="vertical-text">from Point to A Plane__________01</div>
+    <script src="./app.js"></script>
+    <script src="./circle.js" canvas="canvas"></script>
+  </body>
+</html>

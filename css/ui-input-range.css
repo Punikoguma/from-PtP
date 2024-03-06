@@ -1,0 +1,82 @@
+input[type="range"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    display: block;
+    width : calc(100% - var(--round-input-radius) - var(--range-button-radius) -  (var(--round-input-radius) - var(--range-button-radius))/2);
+    height: 2px;
+    background-color: var(--text-color);
+    border-radius: 0px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: var(--thumb-height);
+    width: var(--thumb-width);
+    background-color: var(--text-color);
+    border-radius: var(--thumb-border-radius);
+    cursor: pointer;
+    margin-top: 0px;
+    border: none;
+    box-shadow: none;
+}
+
+input[type="range"]:active::-webkit-slider-thumb{
+    background-color: var(--text-color);
+    border: 2px solid var(--inputbg-color);
+    cursor: none;
+    box-shadow: none;
+}
+input.value, input.range-value{
+    padding: 0px 0px;
+    margin: 0px 0px;
+    font-family: var(--font-family-ui);
+    font-size:10px;
+    width: var(--round-input-radius);
+    height: var(--round-input-radius);
+    line-height:var(--round-input-radius);
+    position: relative;
+    background-color: var(--inputbg-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 0 0;
+    border-radius: 50%;
+    border: 1px solid var(--text-color);
+    letter-spacing: 0.1em;
+}
+input[type="number"]:focus {border: 1px solid #0000ff;  outline: 0;}
+
+.no-spin::-webkit-inner-spin-button,
+.no-spin::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+    -moz-appearance:textfield !important;
+}
+.range-button{
+    cursor: pointer;
+    padding: none;
+    margin: 0px 0px 0px 5px;;
+    font-family: var(--font-family-ui);
+    font-size:10px;
+
+    width: var(--range-button-radius);
+    height: var(--range-button-radius);
+    line-height:var(--range-button-radius);
+
+    position: relative;
+    color: var(--inputbg-color);
+    background-color: var(--text-color);
+    text-align: center;
+    border-radius: 50%;
+    border: none;
+    display:block;
+    float:left;
+}
+.range-button:active {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+}

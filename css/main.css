@@ -1,0 +1,174 @@
+@import './ui.css'; 
+@import './ui-input-range.css'; 
+
+body {
+    font-family: var(--font-family-text);
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+:root {
+    --text-color: #454545;
+    --inputbg-color: #ffffff;
+    --accent-color: #b5b5b5;
+    --thumb-height: 10px;
+    --thumb-width: 10px;
+    --thumb-border-radius: 50%;
+    --round-input-radius: 40px;
+    --range-button-radius: 30px;
+    --font-family-ui: 'Roboto';
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.panel-left {
+    width: 500px;
+    /* height: 100%; */
+    position : fixed;
+    top: 50px;
+    left: 50px;
+    background-color: none ;
+}
+
+#canvas-container {
+    position: fixed;
+    right: 38px;
+    bottom: 25px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }  
+
+.vertical-text {
+    position: fixed;
+    right: -400px; /* 右側に配置し、適切なマージンを確保 */
+    top: 50%; /* 画面の中央あたりに配置 */
+    transform: translate(0, -50%) rotate(270deg); /* 中央寄せの微調整と90度回転 */
+    font-size: 55px; /* フォントサイズは適宜調整してください */
+    color: #313131;; /* 文字色、必要に応じて変更してください */
+    background-color: none; /* 背景色を指定しない */
+    padding: 10px; /* パディング、見た目に合わせて調整 */
+    font-family: 'Roboto'; /* フォントファミリー、必要に応じて変更 */
+    white-space: nowrap; /* テキストが一行で表示されるように設定 */
+}
+
+
+.color-picker-container {
+    background-color: #919191; /* 任意の背景色 */
+    padding: 5px; /* コンテナ内の余白 */
+    border-radius: 8px; /* 角の丸み */
+    position: fixed; /* 画面に対して固定位置 */
+    bottom: 450px; /* 下端から450pxの位置 */
+    margin-left: 17px;
+}
+.color-picker-container {
+    background-color: #919191;
+    padding: 10px;
+    border-radius: 8px;
+    position: fixed;
+    bottom: 450px;
+    margin-left: 17px;
+}
+
+/* 全てのカラーピッカー入力にマージンを適用 */
+.square-picker,
+.circle-picker,
+.rectangular-picker {
+    margin-right: 10px; /* 右側に10pxのマージンを追加 */
+}
+
+/* 最後のカラーピッカー入力のマージンを取り除く */
+.color-picker-container input[type="color"]:last-child {
+    margin-right: 0; /* 最後の要素のみ、右マージンを0に設定 */
+}
+
+
+/* 正方形 */
+.square-picker {
+    border: none;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.square-picker::-webkit-color-swatch-wrapper,
+.square-picker::-webkit-color-swatch {
+    border-radius: 0%;
+    padding: 0;
+}
+
+/* 円形 */
+.circle-picker {
+    border-radius: 50%;
+    border: none;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.circle-picker::-webkit-color-swatch-wrapper,
+.circle-picker::-webkit-color-swatch {
+    border-radius: 50%;
+    padding: 0;
+}
+
+/* 横長の長方形 */
+.rectangular-picker {
+    border: none;
+    height: 30px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.rectangular-picker::-webkit-color-swatch-wrapper,
+.rectangular-picker::-webkit-color-swatch {
+    border-radius: 0%;
+    padding: 0;
+}
+.description-container {
+    background-color: none; /* 任意の背景色 */
+    padding: 5px; /* コンテナ内の余白 */
+    border-radius: 8px; /* 角の丸み */
+    position: fixed; /* 画面に対して固定位置 */
+    bottom: 25px; /* 下端から25pxの位置 */
+    left: 38; /* 左端から0pxの位置 */
+    margin: 0; /* 外側の余白を削除 */
+}
+
+
+.description {
+    color: var(--text-color);
+    font-family: var(--font-family-ui);
+    letter-spacing: 0.2em;
+    font-size: 12px;
+    line-height: 180%;
+    margin: 0 0 0 0;
+    padding: 10px 10px 10px 10px;
+}
+
+@media screen and (max-width: 1080px) {
+    .panel-left {
+        width: 190px;
+        /* height: 100%; */
+        position : fixed;
+        top: 10px;
+        left: 10px;
+        background-color: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .panel-left {
+        width: 150px;
+        /* height: 100%; */
+        position : fixed;
+        top: 10px;
+        left: 10px;
+        background-color: none;
+    }
+}

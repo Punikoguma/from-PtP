@@ -1,0 +1,70 @@
+.ui-group{
+    margin: 0px 0px 20px 0px;
+}
+
+.container{
+    background-color: none;
+    width: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    border-radius: 0;
+}
+
+.ui-title{
+    width:100%;
+    font-family: var(--font-family-ui);
+    letter-spacing: 0.5em;
+    text-align: center;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+
+    font-size:18px;
+    font-weight: normal;
+    line-height:20px;
+    position: relative;
+    color: var(--text-color);
+    background:none;
+    display:block;
+    float: none;
+    border:none;
+    user-select:none;
+}
+
+.ui-subtitle{
+    font-family: var(--font-family-ui);
+    letter-spacing: 0.3em;
+    text-align: center;
+    padding: 0px 0px 0px 0px;
+    margin: 10px 0px 0px 0px;
+
+    font-size:14px;
+    line-height:20px;
+    position: relative;
+    color: var(--text-color);
+    background:none;
+    display:block;
+    float: none;
+    border:none;
+    user-select:none;
+}
+
+.dotline {
+    height: 2px;
+    margin: 10px 5px 5px 5px;
+    position: relative;
+}
+
+.dotline::before {
+    content: "";
+    background-image: linear-gradient(to right, var(--text-color), var(--text-color) 3px, transparent 3px, transparent 8px);
+    background-size: 8px 2px;
+    background-repeat: repeat-x;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
