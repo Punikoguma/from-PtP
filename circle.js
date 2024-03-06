@@ -14,8 +14,19 @@ window.config = {
 };
 
 function setup() {
-  let canvas = createCanvas(800, 800);
-  canvas.parent('canvas-container');  
+  // canvas-containerの要素を取得
+let container = document.getElementById('canvas-container');
+
+// canvas-containerの幅と高さを取得
+let width = container.clientWidth;
+let height = container.clientHeight;
+
+// キャンバスを作成し、canvas-containerのサイズに合わせる
+let canvas = createCanvas(width, height);
+
+// キャンバスをcanvas-containerの子要素として追加
+canvas.parent('canvas-container');
+
   config.centerX = width / 2;
   config.centerY = height / 2;
   startTime = millis(); // スタート時刻を記録
