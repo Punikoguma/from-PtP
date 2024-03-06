@@ -151,24 +151,48 @@ body {
     padding: 10px 10px 10px 10px;
 }
 
-@media screen and (max-width: 1080px) {
+@import './ui.css'; 
+@import './ui-input-range.css'; 
+
+/* 既存のスタイル */
+
+/* レスポンシブデザインのための追加のメディアクエリ */
+@media screen and (max-width: 768px) {
+    body {
+        overflow: auto; /* スクロールを有効にする */
+    }
+
     .panel-left {
-        width: 190px;
-        /* height: 100%; */
-        position : fixed;
-        top: 10px;
-        left: 10px;
-        background-color: none;
+        width: 100%; /* モバイルデバイスでは全幅を使用 */
+        top: 0;
+        left: 0;
+    }
+
+    #canvas-container {
+        position: relative; /* モバイルでは相対位置に変更 */
+        bottom: auto;
+        right: auto;
+        justify-content: center; /* 中央揃えに変更 */
+    }
+
+    .vertical-text {
+        display: none; /* モバイルでは表示しない */
+    }
+
+    .color-picker-container,
+    .description-container {
+        position: relative; /* モバイルでは相対位置に変更 */
+        bottom: auto;
+        margin-left: auto; /* 中央揃えのために自動マージンを使用 */
+        margin-right: auto;
+        width: 90%; /* コンテナの幅を調整 */
     }
 }
 
 @media screen and (max-width: 480px) {
-    .panel-left {
-        width: 150px;
-        /* height: 100%; */
-        position : fixed;
-        top: 10px;
-        left: 10px;
-        background-color: none;
+    /* さらに小さいデバイスのためのスタイル調整 */
+    .color-picker-container,
+    .description-container {
+        width: 95%; /* 幅をさらに広げる */
     }
 }
