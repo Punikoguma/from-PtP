@@ -27,8 +27,6 @@ body {
 }
 
 .panel-left {
-    width: 500px;
-    /* height: 100%; */
     position : fixed;
     top: 50px;
     left: 50px;
