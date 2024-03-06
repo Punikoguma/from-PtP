@@ -36,16 +36,19 @@ body {
 }
 
 #canvas-container {
-    position: fixed; /* または absolute */
-    top: 50%;
-    left: 70%;
-    transform: translate(-50%, -50%);
-    width: 90vh; /* ビューポートの高さの100% */
-    height: 90vh; /* ビューポートの高さの100% */
+    position: fixed;
+    right: 25px; /* 画面の右端から25pxの位置に配置 */
+    bottom: 25px; /* 下側から25pxの位置に配置 */
+    width: calc(100vh - 50px); /* ビューポートの高さから50px引いた値（上下の余白合計） */
+    height: calc(100vh - 50px); /* 同上、正方形を保つ */
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+    max-width: calc(100vw - 50px); /* ビューポートの幅から50px引いた最大値、右側の余白を保つため */
+    max-height: calc(100vw - 50px); /* 同上 */
+}
+
+
   
 
 .vertical-text {
