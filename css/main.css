@@ -65,11 +65,8 @@ body {
 
 .color-picker-container {
     background-color: #919191; /* 任意の背景色 */
-    padding: 5px; /* コンテナ内の余白 */
     border-radius: 8px; /* 角の丸み */
-    position: fixed; /* 画面に対して固定位置 */
-    bottom: 450px; /* 下端から450pxの位置 */
-    margin-left: 17px;
+    position: absolute; 
 }
 .color-picker-container {
     background-color: #919191;
@@ -173,6 +170,12 @@ body {
         left: 0;
     }
 
+    .color-picker-container {
+        position: absolute; /* panel-leftに対して相対的な位置 */
+        bottom: 0; /* panel-leftの下端に配置 */
+        left: 0; /* panel-leftの左端に合わせる */
+        width: 100%; /* panel-leftの幅に合わせる */
+      }
 
     .vertical-text {
         display: none; /* モバイルでは表示しない */

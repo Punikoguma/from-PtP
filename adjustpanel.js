@@ -17,7 +17,6 @@ function adjustPanelLeftWidth() {
   
   // DOMが読み込まれた後に関数を実行
   document.addEventListener('DOMContentLoaded', adjustPanelLeftWidth);
-  
   // ウインドウのサイズが変更された時にも適切に調整
   window.addEventListener('resize', adjustPanelLeftWidth);
   
