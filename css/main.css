@@ -41,16 +41,15 @@ body {
 
 #canvas-container {
     position: fixed;
-    top: 50%; /* 上側からビューポートの中央に配置 */
+    top: 2%; /* 上側からビューポートの中央に配置 */
     right: 2%; /* 画面の右端から25pxの位置に配置 */
-    width: calc(90vh); /* ビューポートの高さの90% */
-    height: calc(90vh); /* 同上、正方形を保つ */
+    width: calc(96vh); /* ビューポートの高さの90% */
+    height: calc(96vh); /* 同上、正方形を保つ */
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: calc(90vw); /* ビューポートの幅の90% */
     max-height: calc(90vw); /* 同上 */
-    transform: translateY(-50%); /* Y軸方向に自身の高さの50%だけ上に移動 */
 }
 
 .panel-left {
