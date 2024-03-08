@@ -1,15 +1,12 @@
-input[type="range"]{
+input[type="range"]{/*スライダーの線*/
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;         /* 標準プロパティ */
     position: relative;
-    padding: 0px 0px;
-    margin: 0px 0px;
     display: block;
-    width : calc(100% - var(--round-input-radius) - var(--range-button-radius) -  (var(--round-input-radius) - var(--range-button-radius))/2);
+    width : calc(100% - var(--round-input-radius) - var(--range-button-radius));
     height: 2px;
     background-color: var(--text-color);
-    border-radius: 0px;
-    outline: none;
 }
 
 input[type="range"]::-webkit-slider-thumb{
@@ -20,8 +17,6 @@ input[type="range"]::-webkit-slider-thumb{
     border-radius: var(--thumb-border-radius);
     cursor: pointer;
     margin-top: 0px;
-    border: none;
-    box-shadow: none;
 }
 
 input[type="range"]:active::-webkit-slider-thumb{
@@ -40,32 +35,32 @@ input.value, input.range-value{
     line-height:var(--round-input-radius);
     position: relative;
     background-color: var(--inputbg-color);
-    color: var(--text-color);
+    color: var(--text-color); /*入力数値の色*/
     text-align: center;
     padding: 0 0;
     border-radius: 50%;
     border: 1px solid var(--text-color);
     letter-spacing: 0.1em;
 }
-input[type="number"]:focus {border: 1px solid #0000ff;  outline: 0;}
+input[type="number"]:focus {border: 2px solid #0000ff;  outline: 0;} /*かざした時に青色の枠ができる*/
 
 .no-spin::-webkit-inner-spin-button,
 .no-spin::-webkit-outer-spin-button {
     -webkit-appearance: none !important;
     margin: 0 !important;
     -moz-appearance:textfield !important;
+    appearance: none;         /* 標準プロパティ */
 }
 .range-button{
     cursor: pointer;
     padding: none;
-    margin: 0px 0px 0px 5px;;
+    margin: 0px 0px 0px 0px;;
     font-family: var(--font-family-ui);
-    font-size:10px;
+    font-size:13px;
 
     width: var(--range-button-radius);
     height: var(--range-button-radius);
-    line-height:var(--range-button-radius);
-
+    line-height:var(--range-button-radius); /*テキストの行の高さをボタンの高さと同じに設定することで、テキストがボタン内で垂直方向に中央揃えされます。*/
     position: relative;
     color: var(--inputbg-color);
     background-color: var(--text-color);

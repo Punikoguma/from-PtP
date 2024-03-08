@@ -12,12 +12,14 @@ body {
     --text-color: #454545;
     --inputbg-color: #ffffff;
     --accent-color: #b5b5b5;
-    --thumb-height: 10px;
-    --thumb-width: 10px;
+    --thumb-height: 15px;/*スライダーのつまみ*/
+    --thumb-width: 15px;
     --thumb-border-radius: 50%;
-    --round-input-radius: 40px;
+    --round-input-radius: 40px;/*スライダーのコンテナの高さ*/
     --range-button-radius: 30px;
     --font-family-ui: 'Roboto';
+    --panel-left-height: 264px; /* panel-leftの高さ */
+    --panel-left-top: 50px; /* panel-leftの上部の位置 */
 }
 
 * {
@@ -26,11 +28,15 @@ body {
     box-sizing: border-box;
 }
 
-.panel-left {
-    position : fixed;
-    top: 50px;
-    left: 50px;
-    background-color: none ;
+.container{
+    background-color: none;
+    width: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0px;/*スライダーコンテナの要素のマージン*/
+    border-radius: 0;
 }
 
 #canvas-container {
@@ -47,34 +53,21 @@ body {
     transform: translateY(-50%); /* Y軸方向に自身の高さの50%だけ上に移動 */
 }
 
-  
-
-.vertical-text {
-    position: fixed;
-    right: -400px; /* 右側に配置し、適切なマージンを確保 */
-    top: 50%; /* 画面の中央あたりに配置 */
-    transform: translate(0, -50%) rotate(270deg); /* 中央寄せの微調整と90度回転 */
-    font-size: 55px; /* フォントサイズは適宜調整してください */
-    color: #313131;; /* 文字色、必要に応じて変更してください */
-    background-color: none; /* 背景色を指定しない */
-    padding: 10px; /* パディング、見た目に合わせて調整 */
-    font-family: 'Roboto'; /* フォントファミリー、必要に応じて変更 */
-    white-space: nowrap; /* テキストが一行で表示されるように設定 */
+.panel-left {
+    position : relative;;
+    width : 270px;
+    height: var(--panel-left-height);
+    top: var(--panel-left-top);
+    left: 50px;
+    background-color:none ;
 }
 
-
 .color-picker-container {
-    background-color: #919191; /* 任意の背景色 */
-    border-radius: 8px; /* 角の丸み */
-    position: absolute; 
-}
-.color-picker-container {
+    position: absolute;
+    left: 0;
     background-color: #919191;
     padding: 10px;
     border-radius: 8px;
-    position: fixed;
-    bottom: 450px;
-    margin-left: 17px;
 }
 
 /* 全てのカラーピッカー入力にマージンを適用 */
@@ -140,6 +133,19 @@ body {
     bottom: 25px; /* 下端から25pxの位置 */
     left: 38; /* 左端から0pxの位置 */
     margin: 0; /* 外側の余白を削除 */
+}
+
+.vertical-text {
+    position: fixed;
+    right: -400px; /* 右側に配置し、適切なマージンを確保 */
+    top: 50%; /* 画面の中央あたりに配置 */
+    transform: translate(0, -50%) rotate(270deg); /* 中央寄せの微調整と90度回転 */
+    font-size: 55px; /* フォントサイズは適宜調整してください */
+    color: #313131;; /* 文字色、必要に応じて変更してください */
+    background-color: none; /* 背景色を指定しない */
+    padding: 10px; /* パディング、見た目に合わせて調整 */
+    font-family: 'Roboto'; /* フォントファミリー、必要に応じて変更 */
+    white-space: nowrap; /* テキストが一行で表示されるように設定 */
 }
 
 
