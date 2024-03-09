@@ -177,7 +177,7 @@ body {
         display: none;
     }
     .mobile-warning {
-        display: none;
+        display: block; /* ここを変更 */
         position: fixed;
         top: 50%;
         left: 50%;
@@ -189,3 +189,4 @@ body {
         z-index: 1000;
     }
 }
+
