@@ -157,3 +157,26 @@ body {
     white-space: nowrap; /* テキストが一行で表示されるように設定 */
 }
 
+/* スマートフォン用の表示設定 */
+@media screen and (max-width: 600px) {
+    /* ページの全てのコンテンツを非表示にします */
+    body * {
+        display: none;
+    }
+    
+    /* 特定のメッセージだけを表示します */
+    .desktop-only-message {
+        display: block;
+        text-align: center;
+        padding: 20px;
+        margin: 20px 0;
+        border: 1px solid #ccc;
+        background-color: #f8f8f8;
+    }
+}
+
+/* デフォルトでは、メッセージを非表示にします */
+.desktop-only-message {
+    display: none;
+}
+
