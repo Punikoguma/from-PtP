@@ -157,8 +157,3 @@ body {
     white-space: nowrap; /* テキストが一行で表示されるように設定 */
 }
 
-@media screen and (max-width: 600px) {
-    body {
-        display: none;
-    }
-}
