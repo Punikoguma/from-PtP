@@ -43,8 +43,8 @@ body {
     top: var(--margin); /* 上側の余白 */
     bottom: var(--margin); /* 下側の余白も指定して配置を調整 */
     right: var(--margin);
-    width: calc(100vh - var(--margin) * 2); /* 上と同じ値で正方形を保つ */
-    height: calc(100vh - var(--margin) * 2); /* 上と同じ値で正方形を保つ */
+    width: calc(100* var(--vh) - var(--margin) * 2); /* 上と同じ値で正方形を保つ */
+    height: calc(100* var(--vh) - var(--margin) * 2); /* 上と同じ値で正方形を保つ */
     display: flex;
     justify-content: center;
     align-items: center;
