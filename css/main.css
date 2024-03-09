@@ -157,22 +157,3 @@ body {
     font-family: 'Roboto'; /* フォントファミリー、必要に応じて変更 */
     white-space: nowrap; /* テキストが一行で表示されるように設定 */
 }
-
-@media (orientation: portrait) {
-    #canvas-container {
-        width: 96vw; /* ビューポートの幅の96% */
-        height: 96vw; /* 幅と同じ値を高さにも適用して正方形を保つ */
-        position: fixed;
-        bottom: 0; /* 画面の下端に配置 */
-        left: 2%; /* 画面の左端から2%の位置に配置 */
-        right: 2%; /* 画面の右端から2%の位置に配置して中央揃えの効果を与える */
-        margin: auto; /* 水平方向の中央揃え */
-    }
-    .panel-left {
-        width: calc(100% - 4%); /* ウインドウの幅から左右に2%ずつ余白を引いた幅 */
-        margin-left: 2%; /* 左側に2%の余白を追加 */
-        margin-right: 2%; /* 右側に2%の余白を追加 */
-        height: var(--panel-left-height); /* 高さは変数で設定 */
-        top: var(--panel-left-top); /* 上の位置は変数で設定 */
-    }
-}
