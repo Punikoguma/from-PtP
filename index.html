@@ -115,37 +115,36 @@
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // 画面サイズのチェックとメッセージ表示の関数
-      function checkScreenAndDisplayMessage() {
-        // 条件に合致するかどうかをチェック
-        if (window.innerWidth <= 600 || (window.innerHeight <= 600 && window.matchMedia("(orientation: landscape)").matches)) {
-          // 条件に合致したら、.mobile-warningを表示
-          document.querySelector('.mobile-warning').style.display = 'block';
+      function toggleContentVisibility() {
+        const isMobile = window.innerWidth <= 600 || (window.innerHeight <= 600 && window.matchMedia("(orientation: landscape)").matches);
+        
+        // ページの全コンテンツを非表示にする
+        document.querySelectorAll('body > div').forEach(el => {
+          el.style.display = 'none'; // 最初に全て非表示にする
+        });
     
-          // 他のコンテンツを隠す
-          document.querySelectorAll('.content, .panel-left:not(.mobile-warning)').forEach(function(el) {
-            el.style.display = 'none';
+        if (isMobile) {
+          // スマホ表示の際には、mobile-warningを含む要素のみ表示
+          document.querySelectorAll('.mobile-warning').forEach(el => {
+            // mobile-warning を含む親要素を探して表示する
+            let parent = el;
+            while(parent && parent !== document.body) {
+              parent.style.display = 'block'; // 親要素を表示
+              parent = parent.parentNode; // 更に上の親要素をチェック
+            }
           });
-    
-          // mobile-warningを含む親要素を表示するようにスタイルを設定
-          document.querySelector('.mobile-warning').parentNode.style.display = 'block';
         } else {
-          // 条件に合致しなければ、.mobile-warningを非表示
-          document.querySelector('.mobile-warning').style.display = 'none';
-    
-          // 他のコンテンツを表示する
-          document.querySelectorAll('.content, .panel-left:not(.mobile-warning)').forEach(function(el) {
-            el.style.display = ''; // displayプロパティをリセット
+          // それ以外では、全コンテンツを表示
+          document.querySelectorAll('body > div').forEach(el => {
+            el.style.display = ''; // 全てを表示状態に戻す
           });
         }
       }
     
-      // ページの読み込み時に実行
-      checkScreenAndDisplayMessage();
-    
-      // ウィンドウのリサイズ時にもチェック
-      window.addEventListener('resize', checkScreenAndDisplayMessage);
+      // ページの読み込み時とウィンドウのリサイズ時にチェックを実行
+      toggleContentVisibility();
+      window.addEventListener('resize', toggleContentVisibility);
     });
-    </script> 
+    </script>
   </body>
 </html>
