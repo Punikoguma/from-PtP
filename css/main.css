@@ -58,7 +58,7 @@ body {
     top: var(--margin); /* 上側の余白 */
     bottom: var(--margin); /* 下側の余白も指定して配置を調整 */
     height: calc(100vh - var(--margin) * 2); /* 上と同じ値で正方形を保つ */
-    background-color: none; /* 背景色 */
+    background-color: #9f9f9f; /* 背景色 */
 }
 
 .color-picker-container {
