@@ -157,3 +157,13 @@ body {
     font-family: 'Roboto'; /* フォントファミリー、必要に応じて変更 */
     white-space: nowrap; /* テキストが一行で表示されるように設定 */
 }
+
+@media screen and (orientation: landscape) and (min-height: 768px) {
+    :root {
+        --panel-left-height-adjusted: calc(100vh - 100px); /* アドレスバーとツールバーの高さを考慮 */
+    }
+
+    .panel-left {
+        height: calc(var(--panel-left-height-adjusted) - var(--margin) * 2);
+    }
+}
