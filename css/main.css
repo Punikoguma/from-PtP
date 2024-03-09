@@ -53,18 +53,18 @@ body {
 }
 
 .panel-left {
-    position : relative;;
-    width : 270px;
+    position: relative;
+    width: auto; /* 初期値はautoまたは具体的な値 */
     height: var(--panel-left-height);
     top: var(--panel-left-top);
     left: 50px;
-    background-color:none ;
+    background-color:#c77676;
 }
 
 .color-picker-container {
     position: absolute;
     left: 0;
-    background-color: #919191;
+    background-color: #a24040;
     padding: 10px;
     border-radius: 8px;
 }
