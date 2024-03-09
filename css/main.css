@@ -10,7 +10,7 @@ body {
 
 :root {
     --text-color: #454545;
-    --inputbg-color: #ffffff;
+    --inputbg-color: #d4d4d4;
     --accent-color: #b5b5b5;
     --thumb-height: 15px;/*スライダーのつまみ*/
     --thumb-width: 15px;
@@ -45,7 +45,7 @@ body {
     top: var(--margin); /* 上側の余白 */
     bottom: var(--margin); /* 下側の余白も指定して配置を調整 */
     height: calc(100* var(--vh) - var(--margin) * 2); /* 上と同じ値で正方形を保つ */
-    background-color: #9f9f9f; /* 背景色 */
+    background-color: none; /* 背景色 */
 }
 
 .container{
