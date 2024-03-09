@@ -18,7 +18,6 @@ body {
     --round-input-radius: 40px;/*スライダーのコンテナの高さ*/
     --range-button-radius: 30px;
     --font-family-ui: 'Roboto';
-    --panel-left-height: 100* var(--vh); /* panel-leftの高さ */
     --margin : 2vw;
 }
 
