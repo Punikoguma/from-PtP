@@ -45,8 +45,8 @@ body {
     right: var(--margin); /* 右側の余白 */
     bottom: var(--margin); /* 下側の余白も指定して配置を調整 */
     left: auto; /* 左側の位置指定は不要なので、autoに設定 */
-    width: calc(100* var(--vh) - var(--margin) * 2); /* 高さからmargin*2を引いた値 */
-    height: calc(100* var(--vh) - var(--margin) * 2); /* 上と同じ値で正方形を保つ */
+    width: calc(100vh - var(--margin) * 2); /* 高さからmargin*2を引いた値 */
+    height: calc(100vh - var(--margin) * 2); /* 上と同じ値で正方形を保つ */
     display: flex;
     justify-content: center;
     align-items: center;

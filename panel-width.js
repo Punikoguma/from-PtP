@@ -1,5 +1,5 @@
 function updatePanelWidth() {//panel-leftの幅を決める関数（canvas-containerの幅に対して動的に変化する）
-    const canvasContainer = document.getElementById('canvas-container');
+    const canvasContainer = document.getElementById('canvas-container');//ここでcanvas-containerの要素を取得
     const panelLeft = document.querySelector('.panel-left');
 
     // canvas-containerの左端の位置を計算
