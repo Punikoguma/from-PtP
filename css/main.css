@@ -18,7 +18,7 @@ body {
     --round-input-radius: 40px;/*スライダーのコンテナの高さ*/
     --range-button-radius: 30px;
     --font-family-ui: 'Roboto';
-    --panel-left-height: 264px; /* panel-leftの高さ */
+    --panel-left-height: 340px; /* panel-leftの高さ */
     --panel-left-top: 50px; /* panel-leftの上部の位置 */
 }
 
@@ -53,21 +53,23 @@ body {
 }
 
 .panel-left {
-    position: relative;
-    width: auto; /* 初期値はautoまたは具体的な値 */
-    height: var(--panel-left-height);
-    top: var(--panel-left-top);
-    left: 50px;
-    background-color:#c77676;
+    position: relative; /* これは既に設定されている */
+    width: auto; /* これは既に設定されている */
+    height: var(--panel-left-height); /* 高さは変数で設定 */
+    top: var(--panel-left-top); /* 上の位置は変数で設定 */
+    left: 0px; /* 左の位置は0に設定 */
+    background-color: none; /* 背景色 */
 }
 
 .color-picker-container {
-    position: absolute;
-    left: 0;
-    background-color: #a24040;
-    padding: 10px;
-    border-radius: 8px;
+    position: absolute; /* 絶対位置指定 */
+    bottom: 0px; /* .panel-leftの下端に配置 */
+    left: 0px; /* .panel-leftの左端に配置 */
+    background-color: #a24040; /* 背景色 */
+    padding: 10px; /* パディング */
+    border-radius: 8px; /* 角の丸み */
 }
+
 
 /* 全てのカラーピッカー入力にマージンを適用 */
 .square-picker,
@@ -134,6 +136,16 @@ body {
     margin: 0; /* 外側の余白を削除 */
 }
 
+.description {
+    color: var(--text-color);
+    font-family: var(--font-family-ui);
+    letter-spacing: 0.2em;
+    font-size: 12px;
+    line-height: 180%;
+    margin: 0 0 0 0;
+    padding: 10px 10px 10px 10px;
+}
+
 .vertical-text {
     position: fixed;
     right: -400px; /* 右側に配置し、適切なマージンを確保 */
@@ -145,17 +157,6 @@ body {
     padding: 10px; /* パディング、見た目に合わせて調整 */
     font-family: 'Roboto'; /* フォントファミリー、必要に応じて変更 */
     white-space: nowrap; /* テキストが一行で表示されるように設定 */
-}
-
-
-.description {
-    color: var(--text-color);
-    font-family: var(--font-family-ui);
-    letter-spacing: 0.2em;
-    font-size: 12px;
-    line-height: 180%;
-    margin: 0 0 0 0;
-    padding: 10px 10px 10px 10px;
 }
 
 @import './ui.css'; 
