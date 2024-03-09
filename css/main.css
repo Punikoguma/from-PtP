@@ -172,8 +172,20 @@ body {
 }
 
 /* 縦画面、スマホ、スマホのアスペクト比を持つタブレットの条件 */
-@media screen and (max-aspect-ratio: 1/1), (max-width: 600px) {
+@media screen and (max-width: 600px), screen and (orientation: landscape) and (max-height: 600px)  {
+    .content {
+        display: none;
+    }
     .mobile-warning {
-        display: block;
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        color: black;
+        padding: 20px;
+        border: 1px solid #ccc;
+        z-index: 1000;
     }
 }
