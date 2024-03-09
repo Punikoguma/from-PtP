@@ -112,6 +112,27 @@
     <script src="./circle.js" canvas="canvas"></script>
     <script src="./panel-width.js"></script>
   </div>
-  <div class="mobile-warning">このページはスマホ対応していません</div>
+  <div class="mobile-warning">このページはスマホ対応していません。</div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // 画面サイズのチェックとメッセージ表示の関数
+      function checkScreenAndDisplayMessage() {
+        // 条件に合致するかどうかをチェック
+        if (window.innerWidth <= 600 || (window.innerHeight <= 600 && window.matchMedia("(orientation: landscape)").matches)) {
+          // 条件に合致したら、.mobile-warningを表示
+          document.querySelector('.mobile-warning').style.display = 'block';
+        } else {
+          // 条件に合致しなければ、.mobile-warningを非表示
+          document.querySelector('.mobile-warning').style.display = 'none';
+        }
+      }
+    
+      // ページの読み込み時に実行
+      checkScreenAndDisplayMessage();
+    
+      // ウィンドウのリサイズ時にもチェック
+      window.addEventListener('resize', checkScreenAndDisplayMessage);
+    });
+    </script>    
   </body>
 </html>
