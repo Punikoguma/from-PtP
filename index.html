@@ -115,36 +115,24 @@
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      function toggleContentVisibility() {
-        const isMobile = window.innerWidth <= 600 || (window.innerHeight <= 600 && window.matchMedia("(orientation: landscape)").matches);
-        
-        // ページの全コンテンツを非表示にする
-        document.querySelectorAll('body > div').forEach(el => {
-          el.style.display = 'none'; // 最初に全て非表示にする
-        });
-    
-        if (isMobile) {
-          // スマホ表示の際には、mobile-warningを含む要素のみ表示
-          document.querySelectorAll('.mobile-warning').forEach(el => {
-            // mobile-warning を含む親要素を探して表示する
-            let parent = el;
-            while(parent && parent !== document.body) {
-              parent.style.display = 'block'; // 親要素を表示
-              parent = parent.parentNode; // 更に上の親要素をチェック
-            }
-          });
+      // 画面サイズのチェックとメッセージ表示の関数
+      function checkScreenAndDisplayMessage() {
+        // 条件に合致するかどうかをチェック
+        if (window.innerWidth <= 600 || (window.innerHeight <= 600 && window.matchMedia("(orientation: landscape)").matches)) {
+          // 条件に合致したら、.mobile-warningを表示
+          document.querySelector('.mobile-warning').style.display = 'block';
         } else {
-          // それ以外では、全コンテンツを表示
-          document.querySelectorAll('body > div').forEach(el => {
-            el.style.display = ''; // 全てを表示状態に戻す
-          });
+          // 条件に合致しなければ、.mobile-warningを非表示
+          document.querySelector('.mobile-warning').style.display = 'none';
         }
       }
     
-      // ページの読み込み時とウィンドウのリサイズ時にチェックを実行
-      toggleContentVisibility();
-      window.addEventListener('resize', toggleContentVisibility);
+      // ページの読み込み時に実行
+      checkScreenAndDisplayMessage();
+    
+      // ウィンドウのリサイズ時にもチェック
+      window.addEventListener('resize', checkScreenAndDisplayMessage);
     });
-    </script>
+    </script>    
   </body>
 </html>
