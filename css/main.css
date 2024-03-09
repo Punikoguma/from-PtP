@@ -168,7 +168,6 @@ body {
         right: 2%; /* 右の余白 */
         bottom: 2%; /* 下の余白 */
         left: 2%; /* 左の余白 */
-        margin: auto; /* 中央揃え */
         position: fixed;
     }
     .panel-left {
