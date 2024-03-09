@@ -127,11 +127,10 @@ body {
 
 .description-container {
     background-color: none; /* 任意の背景色 */
-    padding: 5px; /* コンテナ内の余白 */
-    border-radius: 8px; /* 角の丸み */
-    position: fixed; /* 画面に対して固定位置 */
-    bottom: 25px; /* 下端から25pxの位置 */
-    left: 38; /* 左端から0pxの位置 */
+    padding: 0; /* コンテナ内の余白 */
+    position: absolute; /* 画面に対して固定位置 */
+    bottom: 0; /* 下端から25pxの位置 */
+    left: 0; /* 左端から0pxの位置 */
     margin: 0; /* 外側の余白を削除 */
 }
 
@@ -142,7 +141,6 @@ body {
     font-size: 12px;
     line-height: 180%;
     margin: 0 0 0 0;
-    padding: 10px 10px 10px 10px;
 }
 
 .vertical-text {
