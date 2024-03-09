@@ -173,9 +173,10 @@ body {
         padding: 20px;
         border: 1px solid #ccc;
         z-index: 1000;
-        width: 80%; /* 必要に応じて調整 */
-        max-width: 400px; /* 必要に応じて調整 */
+        width: 80%;
+        max-width: 400px;
         text-align: center;
     }
 }
+
 
