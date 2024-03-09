@@ -48,8 +48,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: calc(90vw); /* ビューポートの幅の90% */
-    max-height: calc(90vw); /* 同上 */
 }
 
 .panel-left {
