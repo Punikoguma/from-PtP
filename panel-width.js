@@ -1,4 +1,4 @@
-function updatePanelWidth() {
+function updatePanelWidth() {//panel-leftの幅を決める関数（canvas-containerの幅に対して動的に変化する）
     const canvasContainer = document.getElementById('canvas-container');
     const panelLeft = document.querySelector('.panel-left');
 
@@ -15,6 +15,7 @@ function updatePanelWidth() {
 
     // panel-leftのleftプロパティを更新して、左側の余白を確保
     panelLeft.style.left = `${margin}px`;
+    panelLeft.style.top = `${margin}px`;
 }
 
 // ウィンドウのリサイズ時とページの初期読み込み時に関数を実行

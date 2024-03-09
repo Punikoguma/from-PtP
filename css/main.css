@@ -18,8 +18,8 @@ body {
     --round-input-radius: 40px;/*スライダーのコンテナの高さ*/
     --range-button-radius: 30px;
     --font-family-ui: 'Roboto';
-    --panel-left-height: 340px; /* panel-leftの高さ */
-    --panel-left-top: 50px; /* panel-leftの上部の位置 */
+    --panel-left-height: 100vh; /* panel-leftの高さ */
+    --margin : 2vw;
 }
 
 * {
@@ -41,29 +41,31 @@ body {
 
 #canvas-container {
     position: fixed;
-    top: 2%; /* 上側からビューポートの中央に配置 */
-    right: 2%; /* 画面の右端から25pxの位置に配置 */
-    width: calc(96vh); /* ビューポートの高さの90% */
-    height: calc(96vh); /* 同上、正方形を保つ */
+    top: var(--margin); /* 上側の余白 */
+    right: var(--margin); /* 右側の余白 */
+    bottom: var(--margin); /* 下側の余白も指定して配置を調整 */
+    left: auto; /* 左側の位置指定は不要なので、autoに設定 */
+    width: calc(100vh - var(--margin) * 2); /* 高さからmargin*2を引いた値 */
+    height: calc(100vh - var(--margin) * 2); /* 上と同じ値で正方形を保つ */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+
 .panel-left {
     position: relative; /* これは既に設定されている */
-    width: auto; /* これは既に設定されている */
-    height: var(--panel-left-height); /* 高さは変数で設定 */
-    top: var(--panel-left-top); /* 上の位置は変数で設定 */
-    left: 0px; /* 左の位置は0に設定 */
+    top: var(--margin); /* 上側の余白 */
+    bottom: var(--margin); /* 下側の余白も指定して配置を調整 */
+    height: calc(100vh - var(--margin) * 2); /* 上と同じ値で正方形を保つ */
     background-color: none; /* 背景色 */
 }
 
 .color-picker-container {
     position: absolute; /* 絶対位置指定 */
-    bottom: 0px; /* .panel-leftの下端に配置 */
+    bottom: 510px; /* .panel-leftの下端に配置 */
     left: 0px; /* .panel-leftの左端に配置 */
-    background-color: #a24040; /* 背景色 */
+    background-color: #9f9f9f; /* 背景色 */
     padding: 10px; /* パディング */
     border-radius: 8px; /* 角の丸み */
 }
