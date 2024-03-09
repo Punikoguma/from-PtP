@@ -115,15 +115,21 @@
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // 画面サイズのチェックとメッセージ表示の関数
+      // 画面サイズのチェックとメッセージおよびコンテンツ表示の関数
       function checkScreenAndDisplayMessage() {
+        // コンテンツと警告メッセージ要素の参照を取得
+        const mobileWarning = document.querySelector('.mobile-warning');
+        const content = document.querySelector('.content');
+        
         // 条件に合致するかどうかをチェック
         if (window.innerWidth <= 600 || (window.innerHeight <= 600 && window.matchMedia("(orientation: landscape)").matches)) {
-          // 条件に合致したら、.mobile-warningを表示
-          document.querySelector('.mobile-warning').style.display = 'block';
+          // 条件に合致したら、.mobile-warningを表示し、contentを非表示に
+          mobileWarning.style.display = 'block';
+          content.style.display = 'none';
         } else {
-          // 条件に合致しなければ、.mobile-warningを非表示
-          document.querySelector('.mobile-warning').style.display = 'none';
+          // 条件に合致しなければ、.mobile-warningを非表示、contentを表示
+          mobileWarning.style.display = 'none';
+          content.style.display = 'block';
         }
       }
     
@@ -133,6 +139,6 @@
       // ウィンドウのリサイズ時にもチェック
       window.addEventListener('resize', checkScreenAndDisplayMessage);
     });
-    </script>    
+  </script>
   </body>
 </html>
