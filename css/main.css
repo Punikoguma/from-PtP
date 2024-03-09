@@ -160,6 +160,7 @@ body {
     #canvas-container {
         width: 96vw; /* ビューポートの幅の96% */
         height: 96vw; /* 幅と同じ値を高さにも適用して正方形を保つ */
+        top: 2%; /* 上の余白 */
         right: 2%; /* 右の余白 */
         bottom: 2%; /* 下の余白 */
         left: 2%; /* 左の余白 */
