@@ -27,17 +27,6 @@ body {
     box-sizing: border-box;
 }
 
-.container{
-    background-color: none;
-    width: auto;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 0px;/*スライダーコンテナの要素のマージン*/
-    border-radius: 0;
-}
-
 #canvas-container {
     position: fixed; /* これは既に設定されている */
     top: var(--margin); /* 上側の余白 */
@@ -58,6 +47,18 @@ body {
     height: calc(100* var(--vh) - var(--margin) * 2); /* 上と同じ値で正方形を保つ */
     background-color: #9f9f9f; /* 背景色 */
 }
+
+.container{
+    background-color: none;
+    width: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0px;/*スライダーコンテナの要素のマージン*/
+    border-radius: 0;
+}
+
 
 .color-picker-container {
     position: absolute; /* 絶対位置指定 */
