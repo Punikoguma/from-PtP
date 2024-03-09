@@ -18,7 +18,7 @@ body {
     --round-input-radius: 40px;/*スライダーのコンテナの高さ*/
     --range-button-radius: 30px;
     --font-family-ui: 'Roboto';
-    --panel-left-height: 100vh; /* panel-leftの高さ */
+    --panel-left-height: 100* var(--vh); /* panel-leftの高さ */
     --margin : 2vw;
 }
 
@@ -45,8 +45,8 @@ body {
     right: var(--margin); /* 右側の余白 */
     bottom: var(--margin); /* 下側の余白も指定して配置を調整 */
     left: auto; /* 左側の位置指定は不要なので、autoに設定 */
-    width: calc(100vh - var(--margin) * 2); /* 高さからmargin*2を引いた値 */
-    height: calc(100vh - var(--margin) * 2); /* 上と同じ値で正方形を保つ */
+    width: calc(100* var(--vh) - var(--margin) * 2); /* 高さからmargin*2を引いた値 */
+    height: calc(100* var(--vh) - var(--margin) * 2); /* 上と同じ値で正方形を保つ */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,13 +57,13 @@ body {
     position: relative; /* これは既に設定されている */
     top: var(--margin); /* 上側の余白 */
     bottom: var(--margin); /* 下側の余白も指定して配置を調整 */
-    height: calc(100vh - var(--margin) * 2); /* 上と同じ値で正方形を保つ */
+    height: calc(100* var(--vh) - var(--margin) * 2); /* 上と同じ値で正方形を保つ */
     background-color: #9f9f9f; /* 背景色 */
 }
 
 .color-picker-container {
     position: absolute; /* 絶対位置指定 */
-    bottom: 510px; /* .panel-leftの下端に配置 */
+    top: 280px; /* .panel-leftの下端に配置 */
     left: 0px; /* .panel-leftの左端に配置 */
     background-color: #9f9f9f; /* 背景色 */
     padding: 10px; /* パディング */
@@ -156,14 +156,4 @@ body {
     padding: 10px; /* パディング、見た目に合わせて調整 */
     font-family: 'Roboto'; /* フォントファミリー、必要に応じて変更 */
     white-space: nowrap; /* テキストが一行で表示されるように設定 */
-}
-
-@media screen and (orientation: landscape) and (min-height: 768px) {
-    :root {
-        --panel-left-height-adjusted: calc(100vh - 100px); /* アドレスバーとツールバーの高さを考慮 */
-    }
-
-    .panel-left {
-        height: calc(var(--panel-left-height-adjusted) - var(--margin) * 2);
-    }
 }
