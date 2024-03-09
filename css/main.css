@@ -43,7 +43,7 @@ body {
     position: fixed;
     top: 2%; /* 上側からビューポートの中央に配置 */
     right: 2%; /* 画面の右端から25pxの位置に配置 */
-    width: calc(96vh); /* ビューポートの高さの96% */
+    width: calc(96vh); /* ビューポートの高さの90% */
     height: calc(96vh); /* 同上、正方形を保つ */
     display: flex;
     justify-content: center;
@@ -162,7 +162,25 @@ body {
 @import './ui-input-range.css'; 
 
 /* 既存のスタイル */
-
+@media (orientation: portrait) {
+    #canvas-container {
+        width: 96vw; /* ビューポートの幅の96% */
+        height: 96vw; /* 幅と同じ値を高さにも適用して正方形を保つ */
+        top: 2%; /* 上の余白 */
+        right: 2%; /* 右の余白 */
+        bottom: 2%; /* 下の余白 */
+        left: 2%; /* 左の余白 */
+        margin: auto; /* 中央揃え */
+        position: fixed;
+    }
+    .panel-left {
+        width: calc(100% - 4%); /* ウインドウの幅から左右に2%ずつ余白を引いた幅 */
+        margin-left: 2%; /* 左側に2%の余白を追加 */
+        margin-right: 2%; /* 右側に2%の余白を追加 */
+        height: var(--panel-left-height); /* 高さは変数で設定 */
+        top: var(--panel-left-top); /* 上の位置は変数で設定 */
+    }
+}
 /* レスポンシブデザインのための追加のメディアクエリ */
 @media screen and (max-width: 768px) {
     body {
