@@ -173,9 +173,6 @@ body {
 
 /* 縦画面、スマホ、スマホのアスペクト比を持つタブレットの条件 */
 @media screen and (max-width: 600px), screen and (orientation: landscape) and (max-height: 600px)  {
-    .content {
-        display: none;
-    }
     .mobile-warning {
         display: block; /* ここを変更 */
         position: fixed;
@@ -187,6 +184,9 @@ body {
         padding: 20px;
         border: 1px solid #ccc;
         z-index: 1000;
+    }
+    .content {
+        display: none;
     }
 }
 
