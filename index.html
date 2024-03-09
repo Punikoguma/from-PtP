@@ -121,9 +121,22 @@
         if (window.innerWidth <= 600 || (window.innerHeight <= 600 && window.matchMedia("(orientation: landscape)").matches)) {
           // 条件に合致したら、.mobile-warningを表示
           document.querySelector('.mobile-warning').style.display = 'block';
+    
+          // 他のコンテンツを隠す
+          document.querySelectorAll('.content, .panel-left:not(.mobile-warning)').forEach(function(el) {
+            el.style.display = 'none';
+          });
+    
+          // mobile-warningを含む親要素を表示するようにスタイルを設定
+          document.querySelector('.mobile-warning').parentNode.style.display = 'block';
         } else {
           // 条件に合致しなければ、.mobile-warningを非表示
           document.querySelector('.mobile-warning').style.display = 'none';
+    
+          // 他のコンテンツを表示する
+          document.querySelectorAll('.content, .panel-left:not(.mobile-warning)').forEach(function(el) {
+            el.style.display = ''; // displayプロパティをリセット
+          });
         }
       }
     
@@ -133,6 +146,6 @@
       // ウィンドウのリサイズ時にもチェック
       window.addEventListener('resize', checkScreenAndDisplayMessage);
     });
-    </script>    
+    </script> 
   </body>
 </html>
