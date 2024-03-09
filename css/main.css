@@ -163,14 +163,13 @@ body {
     body * {
         display: none;
     }
-    
-    /* 特定のメッセージだけを表示します */
-    .desktop-only-message {
+      /* 特定のメッセージだけを表示します */
+      .desktop-only-message {
         display: block;
         text-align: center;
         padding: 20px;
         margin: 20px 0;
-        border: 1px solid #ccc;
+        border: 1px solid #9c9c9c;
         background-color: #f8f8f8;
     }
 }
@@ -179,4 +178,3 @@ body {
 .desktop-only-message {
     display: none;
 }
-
