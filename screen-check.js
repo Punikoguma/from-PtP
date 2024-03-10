@@ -4,31 +4,39 @@ document.addEventListener("DOMContentLoaded", function() {
         var mobileWarning = document.querySelector('.mobile-warning');
         var tabletLandscapeRecommendation = document.querySelector('.tablet-landscape-recommendation');
         
-        // タブレットとスマホの判定
-        // 新しい基準に基づくデバイス判定
-var isMobilePortrait = window.innerWidth <= 499 || window.innerHeight <= 499;
-var isMobileLandscapeOrTabletPortrait = (window.innerWidth >= 500 && window.innerWidth <= 899) || (window.innerHeight >= 500 && window.innerHeight <= 899);
-var isTabletLandscape = (window.innerWidth >= 900 && window.innerWidth <= 1280) || (window.innerHeight >= 900 && window.innerHeight <= 1280);
+        // 画面の向きを考慮したデバイス判定
+var screenWidth = window.innerWidth;
+var screenHeight = window.innerHeight;
+
+// スマホ判定（縦横問わず）
+var isMobile = screenWidth <= 499 || (screenWidth >= 500 && screenWidth <= 899 && screenHeight <= 499);
+
+// タブレット縦向き判定
+var isTabletPortrait = screenWidth >= 500 && screenWidth <= 899 && screenHeight > 499;
+
+// タブレット横向きおよびそれ以外（デスクトップ、ラップトップ）の判定
+var isTabletLandscapeOrLarger = screenWidth >= 900;
 
 // スマホの場合（縦横問わず）
-if (isMobilePortrait || (isMobileLandscapeOrTabletPortrait && window.matchMedia("(orientation: landscape)").matches)) {
+if (isMobile) {
     content.style.display = 'none';
     mobileWarning.style.display = 'block';
     tabletLandscapeRecommendation.style.display = 'none';
 } 
 // タブレットで縦向きの場合
-else if (isMobileLandscapeOrTabletPortrait && window.matchMedia("(orientation: portrait)").matches) {
+else if (isTabletPortrait) {
     content.style.display = 'none';
     mobileWarning.style.display = 'none';
     tabletLandscapeRecommendation.style.display = 'block';
 } 
-// それ以外（タブレット横向きやPCなど）
-else {
+// それ以外（タブレットの横向き・デスクトップ・ラップトップ）
+else if (isTabletLandscapeOrLarger) {
     content.style.display = 'block';
     mobileWarning.style.display = 'none';
     tabletLandscapeRecommendation.style.display = 'none';
 }
 
+    }
 
     checkScreenAndToggleContent();
     window.addEventListener('resize', checkScreenAndToggleContent);
