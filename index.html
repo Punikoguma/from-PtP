@@ -114,7 +114,7 @@
   </div>
   <div class="mobile-warning">このページはスマホ対応していません。パソコン環境での閲覧を推奨します。</div>
   <script>
-document.addEventListener("DOMContentLoaded", function() {
+window.onload = function() {
   function checkScreenAndToggleContent() {
     if (window.innerWidth <= 10000 || (window.innerHeight <= 10000 && window.matchMedia("(orientation: landscape)").matches)) {
       document.querySelector('.content').style.display = 'none';
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   checkScreenAndToggleContent();
   window.addEventListener('resize', checkScreenAndToggleContent);
-});
+};
   </script>
   </body>
 </html>
