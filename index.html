@@ -17,6 +17,7 @@
     <div class="content">
     <div class="panel-left">
       <section class="ui-group" id="world">
+        <div class="sliders-container">
           <label class="ui-subtitle">size</label>
           <div class="container">
             <button class="range-button" @click="config.size = 450; updateWorld">S</button>
@@ -92,6 +93,7 @@
               @change="updateWorld"
             />
           </div>
+        </div>
           <div class="color-picker-container">
             <input type="color" v-model="config.windowBgC" class="rectangular-picker" @input="updateWorld" />
             <input type="color" v-model="config.bgC" class="square-picker" @input="updateWorld" />

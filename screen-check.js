@@ -35,26 +35,25 @@ else if (isTabletLandscapeOrLarger) {
     mobileWarning.style.display = 'none';
     tabletLandscapeRecommendation.style.display = 'none';
 }
-
     }
-
     checkScreenAndToggleContent();
     window.addEventListener('resize', checkScreenAndToggleContent);
 });
 
-window.onload = function() {
-    // 3つ目の.container要素を選択
-    var thirdContainer = document.querySelectorAll('.container')[2]; // 0から数えるため、3つ目はインデックス2
-    if (thirdContainer) {
-        // .containerの下端の位置を取得
-        var thirdContainerBottom = thirdContainer.offsetTop + thirdContainer.offsetHeight;
-        // color-picker-containerの位置を設定
-        var colorPickerContainer = document.querySelector('.color-picker-container');
-        if (colorPickerContainer) {
-            colorPickerContainer.style.top = thirdContainerBottom + 'px';
-        }
-    }
-};
+window.addEventListener('resize', function() {
+    const slidersContainer = document.querySelector('.sliders-container');
+    const colorPickerContainer = document.querySelector('.color-picker-container');
+    const slidersRect = slidersContainer.getBoundingClientRect();
+
+    // CSS変数から直接marginのピクセル値を計算
+    const marginValueVw = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--margin'));
+    const marginInPixels = marginValueVw * window.innerWidth / 100;
+
+    // marginの値を引いた値を設定
+    colorPickerContainer.style.top = `${slidersRect.bottom - marginInPixels/2}px`;
+});
+
+
 
 // 画面の向きが変わったらリロードする（誤作動防止のため）
 let isPortrait = (window.innerHeight > window.innerWidth);

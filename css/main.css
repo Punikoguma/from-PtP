@@ -1,10 +1,29 @@
-@import './ui.css'; 
 @import './ui-input-range.css'; 
 
 body {
     font-family: var(--font-family-text);
     overflow: hidden;
     height: 100%;
+}
+
+.ui-group{
+    margin: 0px 0px 20px 0px;
+}
+.ui-subtitle{
+    font-family: var(--font-family-ui);
+    letter-spacing: 0.3em;
+    text-align: center;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+
+    font-size:16px;
+    position: relative;
+    color: var(--text-color);
+    background:none;
+    display:block;
+    float: none;
+    border:none;
+    user-select:none;
 }
 
 :root {
@@ -47,6 +66,10 @@ body {
     background-color: none;
 }
 
+.sliders-container {
+    background-color: none; /* ここで好きな背景色を設定 */
+}
+
 .container{/*スライダーコンテナ*/
     background-color: none;
     width: auto;
@@ -61,7 +84,6 @@ body {
 
 .color-picker-container {
     position: absolute; /* 絶対位置指定 */
-    top: calc(31* var(--vh));
     left: 0px; /* .panel-leftの左端に配置 */
     background-color: #9f9f9f; /* 背景色 */
     padding: 10px; /* パディング */
