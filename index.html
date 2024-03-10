@@ -114,26 +114,21 @@
   </div>
   <div class="mobile-warning">このページはスマホ対応していません。パソコン環境での閲覧を推奨します。</div>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // 画面サイズのチェックとコンテンツ表示の関数
-      function checkScreenAndToggleContent() {
-        // 条件に合致するかどうかをチェック
-        if (window.innerWidth <= 600 || (window.innerHeight <= 600 && window.matchMedia("(orientation: landscape)").matches)) {
-          // 条件に合致したら、.contentを非表示にする
-          document.querySelector('.content').style.display = 'none';
-          // .mobile-warningは表示されたままにするため、ここには変更を加えない
-        } else {
-          // 条件に合致しなければ、.contentを表示する
-          document.querySelector('.content').style.display = 'block';
-        }
-      }
-    
-      // ページの読み込み時に実行
-      checkScreenAndToggleContent();
-    
-      // ウィンドウのリサイズ時にもチェック
-      window.addEventListener('resize', checkScreenAndToggleContent);
-    });
+  document.addEventListener("DOMContentLoaded", function() {
+  function checkScreenAndToggleContent() {
+    if (window.innerWidth <= 600 || (window.innerHeight <= 600 && window.matchMedia("(orientation: landscape)").matches)) {
+      document.querySelector('.content').style.display = 'none';
+      document.querySelector('.mobile-warning').style.display = 'block'; // この行を追加
+    } else {
+      document.querySelector('.content').style.display = 'block';
+      document.querySelector('.mobile-warning').style.display = 'none'; // この行を追加
+    }
+  }
+
+  checkScreenAndToggleContent();
+  window.addEventListener('resize', checkScreenAndToggleContent);
+});
+
   </script>
   </body>
 </html>
