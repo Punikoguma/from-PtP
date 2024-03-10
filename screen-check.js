@@ -14,9 +14,6 @@ var isMobile = screenWidth <= 499 || (screenWidth >= 500 && screenWidth <= 899&&
 // タブレット縦向き判定
 var isTabletPortrait = screenWidth >= 650 && screenWidth <= 1100 && screenHeight > 900;
 
-// タブレット横向きおよびそれ以外（デスクトップ、ラップトップ）の判定
-var isTabletLandscapeOrLarger = screenWidth >= 900;
-
 // スマホの場合（縦横問わず）
 if (isMobile) {
     content.style.display = 'none';
@@ -30,7 +27,7 @@ else if (isTabletPortrait) {
     tabletLandscapeRecommendation.style.display = 'block';
 } 
 // それ以外（タブレットの横向き・デスクトップ・ラップトップ）
-else if (isTabletLandscapeOrLarger) {
+else {
     content.style.display = 'block';
     mobileWarning.style.display = 'none';
     tabletLandscapeRecommendation.style.display = 'none';
