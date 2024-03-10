@@ -30,3 +30,14 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('resize', checkScreenAndToggleContent);
 });
 
+// 画面の向きが変わったらリロードする（誤作動防止のため）
+let isPortrait = (window.innerHeight > window.innerWidth);
+
+window.addEventListener('resize', function() {
+    let wasPortrait = isPortrait;
+    isPortrait = (window.innerHeight > window.innerWidth);
+
+    if (isPortrait !== wasPortrait) {
+        window.location.reload();
+    }
+});
