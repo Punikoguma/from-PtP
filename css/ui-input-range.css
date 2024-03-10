@@ -1,7 +1,7 @@
 input[type="range"]{/*スライダーの線*/
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;         /* 標準プロパティ */
+    appearance: none;
     position: relative;
     display: block;
     width : calc(100% - var(--round-input-radius) - var(--range-button-radius));
@@ -9,7 +9,7 @@ input[type="range"]{/*スライダーの線*/
     background-color: var(--text-color);
 }
 
-input[type="range"]::-webkit-slider-thumb{
+input[type="range"]::-webkit-slider-thumb{/*つまみ*/
     -webkit-appearance: none;
     height: var(--thumb-height);
     width: var(--thumb-width);
@@ -19,13 +19,13 @@ input[type="range"]::-webkit-slider-thumb{
     margin-top: 0px;
 }
 
-input[type="range"]:active::-webkit-slider-thumb{
+input[type="range"]:active::-webkit-slider-thumb{/*つまんでるとき（アクティブ時）*/
     background-color: var(--text-color);
     border: 2px solid var(--inputbg-color);
     cursor: none;
     box-shadow: none;
 }
-input.value, input.range-value{
+input.value, input.range-value{/*数値入力*/
     padding: 0px 0px;
     margin: 0px 0px;
     font-family: var(--font-family-ui);
@@ -49,9 +49,9 @@ input[type="number"]:focus {border: 2px solid #0000ff;  outline: 0;} /*かざし
     -webkit-appearance: none !important;
     margin: 0 !important;
     -moz-appearance:textfield !important;
-    appearance: none;         /* 標準プロパティ */
+    appearance: none;
 }
-.range-button{
+.range-button{/*スライダーボタン*/
     cursor: pointer;
     padding: none;
     margin: 0px 0px 0px 0px;;
@@ -60,7 +60,7 @@ input[type="number"]:focus {border: 2px solid #0000ff;  outline: 0;} /*かざし
 
     width: var(--range-button-radius);
     height: var(--range-button-radius);
-    line-height:var(--range-button-radius); /*テキストの行の高さをボタンの高さと同じに設定することで、テキストがボタン内で垂直方向に中央揃えされます。*/
+    line-height:var(--range-button-radius); /*テキストの行の高さをボタンの高さと同じに設定することで、テキストがボタン内で垂直方向に中央揃えされる*/
     position: relative;
     color: var(--inputbg-color);
     background-color: var(--text-color);

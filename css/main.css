@@ -3,22 +3,21 @@
 
 body {
     font-family: var(--font-family-text);
-    margin: 0;
     overflow: hidden;
     height: 100%;
 }
 
 :root {
     --text-color: #454545;
-    --inputbg-color: #d4d4d4;
-    --accent-color: #b5b5b5;
+    --inputbg-color: #d4d4d4;/*数値入力*/
+    --accent-color: #b5b5b5;/*押した時の色*/
     --thumb-height: 15px;/*スライダーのつまみ*/
     --thumb-width: 15px;
     --thumb-border-radius: 50%;
-    --round-input-radius: 40px;/*スライダーのコンテナの高さ*/
-    --range-button-radius: 30px;
+    --round-input-radius: 40px;/*スライダーのコンテナの高さ&数値入力の直径*/
+    --range-button-radius: 30px;/*スライダーボタンの直径*/
     --font-family-ui: 'Roboto';
-    --margin : 2vw;
+    --margin : 2vw;//*一律のマージン*/
 }
 
 * {
@@ -31,9 +30,9 @@ body {
     position: fixed; /* これは既に設定されている */
     top: var(--margin); /* 上側の余白 */
     bottom: var(--margin); /* 下側の余白も指定して配置を調整 */
-    right: var(--margin);
-    width: calc(100* var(--vh) - var(--margin) * 2); /* 上と同じ値で正方形を保つ */
-    height: calc(100* var(--vh) - var(--margin) * 2); /* 上と同じ値で正方形を保つ */
+    right: var(--margin);/*右側の余白*/
+    width: calc(100* var(--vh) - var(--margin) * 2); /* 上と同じ値で正方形を保つ。vhはカスタム変数 */
+    height: calc(100* var(--vh) - var(--margin) * 2); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,14 +40,14 @@ body {
 
 
 .panel-left {
-    position: relative; /* これは既に設定されている */
+    position: relative;
     top: var(--margin); /* 上側の余白 */
     bottom: var(--margin); /* 下側の余白も指定して配置を調整 */
     height: calc(100* var(--vh) - var(--margin) * 2); /* 上と同じ値で正方形を保つ */
-    background-color: none; /* 背景色 */
+    background-color: none;
 }
 
-.container{
+.container{/*スライダーコンテナ*/
     background-color: none;
     width: auto;
     position: relative;
@@ -62,7 +61,7 @@ body {
 
 .color-picker-container {
     position: absolute; /* 絶対位置指定 */
-    top: 280px; /* .panel-leftの下端に配置 */
+    top: calc(31* var(--vh));
     left: 0px; /* .panel-leftの左端に配置 */
     background-color: #9f9f9f; /* 背景色 */
     padding: 10px; /* パディング */
@@ -79,7 +78,7 @@ body {
 
 /* 最後のカラーピッカー入力のマージンを取り除く */
 .color-picker-container input[type="color"]:last-child {
-    margin-right: 0; /* 最後の要素のみ、右マージンを0に設定 */
+    margin-right: 0; /* 最後の要素のみ、右マージンを0に設定。両端のマージンはパディングで取ってある*/
 }
 
 
