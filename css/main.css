@@ -195,16 +195,3 @@ body {
     border: 1px solid #ccc; /* 灰色の境界線 */
     z-index: 1000; /* 他の要素より前面に表示 */
 }
-
-.fullscreenMessage{
-    display: block; /* 初期状態では非表示 */
-    position: fixed; /* 画面上での固定位置 */
-    top: 50%; /* 上から50%の位置に */
-    left: 50%; /* 左から50%の位置に */
-    transform: translate(-50%, -50%); /* 50%ずらして中央に配置 */
-    background-color: white; /* 背景色は白 */
-    color: black; /* 文字色は黒 */
-    padding: 20px; /* 周囲に20pxのパディング */
-    border: 1px solid #ccc; /* 灰色の境界線 */
-    z-index: 1000; /* 他の要素より前面に表示 */
-}
