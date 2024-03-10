@@ -111,19 +111,21 @@
     <script src="./app.js"></script>
     <script src="./circle.js" canvas="canvas"></script>
     <script src="./panel-width.js"></script>
-    <div class="mobile-warning">このページはスマホ対応していません。パソコン環境での閲覧を推奨します。</div>
   </div>
+  <div class="mobile-warning">このページはスマホ対応していません。パソコン環境での閲覧を推奨します。</div>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       // 画面サイズのチェックとメッセージ表示の関数
       function checkScreenAndDisplayMessage() {
         // 条件に合致するかどうかをチェック
         if (window.innerWidth <= 600 || (window.innerHeight <= 600 && window.matchMedia("(orientation: landscape)").matches)) {
-          // 条件に合致したら、.mobile-warningを表示
+          // 条件に合致したら、.mobile-warningを表示し、.contentを非表示
           document.querySelector('.mobile-warning').style.display = 'block';
+          document.querySelector('.content').style.display = 'none'; // この行を追加
         } else {
-          // 条件に合致しなければ、.mobile-warningを非表示
+          // 条件に合致しなければ、.mobile-warningを非表示、.contentを表示
           document.querySelector('.mobile-warning').style.display = 'none';
+          document.querySelector('.content').style.display = 'block'; // この行を追加
         }
       }
     
@@ -133,6 +135,6 @@
       // ウィンドウのリサイズ時にもチェック
       window.addEventListener('resize', checkScreenAndDisplayMessage);
     });
-    </script>    
+  </script>
   </body>
 </html>
