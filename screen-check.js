@@ -9,7 +9,7 @@ var screenWidth = window.innerWidth;
 var screenHeight = window.innerHeight;
 
 // スマホ判定（縦横問わず）
-var isMobile = screenWidth <= 499 || (screenWidth >= 500 && screenWidth <= 1198 && screenHeight <= 499);
+var isMobile = screenWidth <= 499 || (screenWidth >= 500 && screenWidth <= 1198&& screenHeight <= 499);
 
 // タブレット縦向き判定
 var isTabletPortrait = screenWidth >= 500 && screenWidth <= 1199 && screenHeight > 499;
