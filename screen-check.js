@@ -1,7 +1,6 @@
 // Document ready
 document.addEventListener("DOMContentLoaded", function() {
     checkScreenAndToggleContent();
-    adjustFontSize();
 });
 
 // Window resize events
