@@ -14,4 +14,16 @@ document.addEventListener("DOMContentLoaded", function() {
     checkScreenAndToggleContent();
     window.addEventListener('resize', checkScreenAndToggleContent);
   });
-  
+  // 画面の向きを判定して保存する変数
+let isPortrait = (window.innerHeight > window.innerWidth);
+
+window.addEventListener('resize', function() {
+  // 画面の向きが変わったかどうかを判定
+  let wasPortrait = isPortrait;
+  isPortrait = (window.innerHeight > window.innerWidth);
+
+  // 画面の向きが変わった場合、ページを再読み込み
+  if (isPortrait !== wasPortrait) {
+    window.location.reload();
+  }
+});
