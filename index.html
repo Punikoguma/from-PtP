@@ -112,15 +112,18 @@
     <script src="./circle.js" canvas="canvas"></script>
     <script src="./panel-width.js"></script>
   </div>
-</div>
   <div class="mobile-warning">このページはスマホ対応していません。パソコン環境での閲覧を推奨します。</div>
   <script>
-document.addEventListener("DOMContentLoaded", function() {//ブラウザがHTMLドキュメントを解析し終え、すべてのHTMLと同期的に読み込まれたスクリプトが実行された後にこのイベントは発生します
+document.addEventListener("DOMContentLoaded", function() {
   function checkScreenAndToggleContent() {
+    var content = document.querySelector('.content');
+    var mobileWarning = document.querySelector('.mobile-warning');
     if (window.innerWidth <= 10000 || (window.innerHeight <= 10000 && window.matchMedia("(orientation: landscape)").matches)) {
-      document.querySelector('.content').style.display = 'none';
+      content.style.display = 'none';
+      mobileWarning.style.display = 'block'; // .contentが非表示の時、.mobile-warningを表示
     } else {
-      document.querySelector('.content').style.display = 'block';
+      content.style.display = 'block';
+      mobileWarning.style.display = 'none'; // それ以外の場合、.mobile-warningを非表示
     }
   }
 
