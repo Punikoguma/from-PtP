@@ -116,7 +116,7 @@
   <script>
 document.addEventListener("DOMContentLoaded", function() {
   function checkScreenAndToggleContent() {
-    if (window.innerWidth <= 600 || (window.innerHeight <= 600 && window.matchMedia("(orientation: landscape)").matches)) {
+    if (window.innerWidth <= 10000 || (window.innerHeight <= 10000 && window.matchMedia("(orientation: landscape)").matches)) {
       document.querySelector('.content').style.display = 'none';
     } else {
       document.querySelector('.content').style.display = 'block';
