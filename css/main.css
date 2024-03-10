@@ -163,29 +163,6 @@ body {
     line-height: 180%;
     margin: 0 0 0 0;
 }
-
-#text-container {
-    position: fixed; /* これは既に設定されている */
-    top: var(--margin); /* 上側の余白 */
-    bottom: var(--margin); /* 下側の余白も指定して配置を調整 */
-    right: 0;/*右側の余白*/
-    width: 55px; /* 上と同じ値で正方形を保つ。vhはカスタム変数 */
-    height: calc(100* var(--vh) - var(--margin) * 2); 
-    display: flex;
-    background-color: red;
-    justify-content: center;
-    align-items: center;
-}
-
-.vertical-text {
-    font-family: var(--font-family-ui);
-    color: var(--text-color);
-    transform: rotate(270deg); /* テキストを90度回転 */
-    transform-origin: center; /* テキストの中心を基点に回転 */
-    white-space: nowrap; /* テキストが改行されないようにする */
-    text-align: center; /* テキストを中央揃えにする */
-}
-
 /* 最初にメッセージを非表示に */
 .mobile-warning {
     display: none;
