@@ -172,7 +172,7 @@ body {
     width: 55px; /* 上と同じ値で正方形を保つ。vhはカスタム変数 */
     height: calc(100* var(--vh) - var(--margin) * 2); 
     display: flex;
-    background-color: none;
+    background-color: red;
     justify-content: center;
     align-items: center;
 }
