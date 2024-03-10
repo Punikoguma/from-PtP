@@ -1,4 +1,31 @@
 document.addEventListener("DOMContentLoaded", function() {
+    const container = document.querySelector('#text-container');
+    const text = document.querySelector('.vertical-text');
+    adjustFontSize();
+
+    function adjustFontSize() {
+        let fontSize = 1; // 初期フォントサイズを非常に小さく設定
+        text.style.fontSize = fontSize + 'px';
+
+        // テキストがコンテナに収まる最大サイズを探索
+        // ここではテキストが回転しているため、幅と高さの条件が逆転します
+        while (true) {
+            text.style.fontSize = `${fontSize + 1}px`; // フォントサイズを1つ増やす
+            // コンテナの高さとテキストの幅、コンテナの幅とテキストの高さを比較
+            if (text.offsetWidth <= container.offsetHeight && text.offsetHeight <= container.offsetWidth) {
+                fontSize++; // テキストがまだコンテナに収まる場合は、フォントサイズを増やす
+            } else {
+                // コンテナに収まらなくなった場合は、最後に収まったフォントサイズに設定
+                text.style.fontSize = `${fontSize}px`;
+                break; // ループを終了
+            }
+        }
+    }
+    // ウィンドウサイズの変更に対応
+    window.addEventListener('resize', adjustFontSize);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
     function checkScreenAndToggleContent() {
         var content = document.querySelector('.content');
         var mobileWarning = document.querySelector('.mobile-warning');
@@ -39,35 +66,6 @@ else if (isTabletLandscapeOrLarger) {
     checkScreenAndToggleContent();
     window.addEventListener('resize', checkScreenAndToggleContent);
 });
-
-document.addEventListener("DOMContentLoaded", function() {
-    const container = document.querySelector('#text-container');
-    const text = document.querySelector('.vertical-text');
-    adjustFontSize();
-
-    function adjustFontSize() {
-        let fontSize = 1; // 初期フォントサイズを非常に小さく設定
-        text.style.fontSize = fontSize + 'px';
-
-        // テキストがコンテナに収まる最大サイズを探索
-        // ここではテキストが回転しているため、幅と高さの条件が逆転します
-        while (true) {
-            text.style.fontSize = `${fontSize + 1}px`; // フォントサイズを1つ増やす
-            // コンテナの高さとテキストの幅、コンテナの幅とテキストの高さを比較
-            if (text.offsetWidth <= container.offsetHeight && text.offsetHeight <= container.offsetWidth) {
-                fontSize++; // テキストがまだコンテナに収まる場合は、フォントサイズを増やす
-            } else {
-                // コンテナに収まらなくなった場合は、最後に収まったフォントサイズに設定
-                text.style.fontSize = `${fontSize}px`;
-                break; // ループを終了
-            }
-        }
-    }
-
-    // ウィンドウサイズの変更に対応
-    window.addEventListener('resize', adjustFontSize);
-});
-
 window.addEventListener('resize', function() {
     const slidersContainer = document.querySelector('.sliders-container');
     const colorPickerContainer = document.querySelector('.color-picker-container');
