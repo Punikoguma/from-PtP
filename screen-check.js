@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var tabletLandscapeRecommendation = document.querySelector('.tablet-landscape-recommendation'); // 追加
         
         // タブレットとスマホの判定
-        var isTablet = window.innerWidth > 600 && window.innerHeight > 800;
+        var isTablet = window.innerWidth > 600 && window.innerHeight > 800;//タブレットの大きさ
         var isMobile = window.innerWidth <= 600 || window.innerHeight <= 800;
 
         // スマホの場合
