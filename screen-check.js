@@ -12,7 +12,7 @@ var screenHeight = window.innerHeight;
 var isMobile = screenWidth <= 499 || (screenWidth >= 500 && screenWidth <= 899 && screenHeight <= 499);
 
 // タブレット縦向き判定
-var isTabletPortrait = screenWidth >= 500 && screenWidth <= 899 && screenHeight > 499;
+var isTabletPortrait = screenWidth >= 500 && screenWidth <= 1199 && screenHeight > 499;
 
 // タブレット横向きおよびそれ以外（デスクトップ、ラップトップ）の判定
 var isTabletLandscapeOrLarger = screenWidth >= 900;
