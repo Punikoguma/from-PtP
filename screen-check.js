@@ -42,6 +42,20 @@ else if (isTabletLandscapeOrLarger) {
     window.addEventListener('resize', checkScreenAndToggleContent);
 });
 
+window.onload = function() {
+    // 3つ目の.container要素を選択
+    var thirdContainer = document.querySelectorAll('.container')[2]; // 0から数えるため、3つ目はインデックス2
+    if (thirdContainer) {
+        // .containerの下端の位置を取得
+        var thirdContainerBottom = thirdContainer.offsetTop + thirdContainer.offsetHeight;
+        // color-picker-containerの位置を設定
+        var colorPickerContainer = document.querySelector('.color-picker-container');
+        if (colorPickerContainer) {
+            colorPickerContainer.style.top = thirdContainerBottom + 'px';
+        }
+    }
+};
+
 // 画面の向きが変わったらリロードする（誤作動防止のため）
 let isPortrait = (window.innerHeight > window.innerWidth);
 
