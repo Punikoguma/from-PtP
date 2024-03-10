@@ -184,7 +184,7 @@ body {
     z-index: 1000; /* 他の要素より前面に表示 */
 }
 
-.tabletLandscapeRecommendation {
+.tablet-landscape-recommendation {
     display: block; /* 初期状態では非表示 */
     position: fixed; /* 画面上での固定位置 */
     top: 50%; /* 上から50%の位置に */
