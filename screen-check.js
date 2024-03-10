@@ -41,3 +41,8 @@ window.addEventListener('resize', function() {
         window.location.reload();
     }
 });
+
+window.onresize = function() {
+    location.reload();
+  }
+  
