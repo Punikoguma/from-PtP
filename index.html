@@ -114,20 +114,19 @@
   </div>
   <div class="mobile-warning">このページはスマホ対応していません。パソコン環境での閲覧を推奨します。</div>
   <script>
-  document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
   function checkScreenAndToggleContent() {
     if (window.innerWidth <= 600 || (window.innerHeight <= 600 && window.matchMedia("(orientation: landscape)").matches)) {
       document.querySelector('.content').style.display = 'none';
-      document.querySelector('.mobile-warning').style.display = 'block'; // この行を追加
     } else {
       document.querySelector('.content').style.display = 'block';
-      document.querySelector('.mobile-warning').style.display = 'none'; // この行を追加
     }
   }
 
   checkScreenAndToggleContent();
   window.addEventListener('resize', checkScreenAndToggleContent);
 });
+
 
   </script>
   </body>

@@ -184,4 +184,9 @@ body {
     z-index: 1000; /* 他の要素より前面に表示 */
 }
 
+@media (max-width: 600px), (max-height: 600px) and (orientation: landscape) {
+    .mobile-warning {
+        display: block; /* 条件を満たすビューポートで表示 */
+    }
+}
 
