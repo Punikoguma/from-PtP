@@ -53,7 +53,33 @@ window.addEventListener('resize', function() {
     colorPickerContainer.style.top = `${slidersRect.bottom - marginInPixels/2}px`;
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const container = document.querySelector('#text-container');
+    const text = document.querySelector('.vertical-text');
+    adjustFontSize();
 
+    function adjustFontSize() {
+        let fontSize = 1; // 初期フォントサイズを非常に小さく設定
+        text.style.fontSize = fontSize + 'px';
+
+        // テキストがコンテナに収まる最大サイズを探索
+        // ここではテキストが回転しているため、幅と高さの条件が逆転します
+        while (true) {
+            text.style.fontSize = `${fontSize + 1}px`; // フォントサイズを1つ増やす
+            // コンテナの高さとテキストの幅、コンテナの幅とテキストの高さを比較
+            if (text.offsetWidth <= container.offsetHeight && text.offsetHeight <= container.offsetWidth) {
+                fontSize++; // テキストがまだコンテナに収まる場合は、フォントサイズを増やす
+            } else {
+                // コンテナに収まらなくなった場合は、最後に収まったフォントサイズに設定
+                text.style.fontSize = `${fontSize}px`;
+                break; // ループを終了
+            }
+        }
+    }
+
+    // ウィンドウサイズの変更に対応
+    window.addEventListener('resize', adjustFontSize);
+});
 
 // 画面の向きが変わったらリロードする（誤作動防止のため）
 let isPortrait = (window.innerHeight > window.innerWidth);

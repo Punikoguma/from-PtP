@@ -57,7 +57,6 @@ body {
     align-items: center;
 }
 
-
 .panel-left {
     position: relative;
     top: var(--margin); /* 上側の余白 */
@@ -148,7 +147,7 @@ body {
 }
 
 .description-container {
-    background-color: none; /* 任意の背景色 */
+    background-color:none; /* 任意の背景色 */
     padding: 0; /* コンテナ内の余白 */
     position: absolute; /* 画面に対して固定位置 */
     bottom: 0; /* 下端から25pxの位置 */
@@ -165,17 +164,26 @@ body {
     margin: 0 0 0 0;
 }
 
+#text-container {
+    position: fixed; /* これは既に設定されている */
+    top: var(--margin); /* 上側の余白 */
+    bottom: var(--margin); /* 下側の余白も指定して配置を調整 */
+    right: 0;/*右側の余白*/
+    width: 4vW; /* 上と同じ値で正方形を保つ。vhはカスタム変数 */
+    height: calc(100* var(--vh) - var(--margin) * 2); 
+    display: flex;
+    background-color: none;
+    justify-content: center;
+    align-items: center;
+}
+
 .vertical-text {
-    position: fixed;
-    right: -400px; /* 右側に配置し、適切なマージンを確保 */
-    top: 50%; /* 画面の中央あたりに配置 */
-    transform: translate(0, -50%) rotate(270deg); /* 中央寄せの微調整と90度回転 */
-    font-size: 55px; /* フォントサイズは適宜調整してください */
-    color: #313131;; /* 文字色、必要に応じて変更してください */
-    background-color: none; /* 背景色を指定しない */
-    padding: 10px; /* パディング、見た目に合わせて調整 */
-    font-family: 'Roboto'; /* フォントファミリー、必要に応じて変更 */
-    white-space: nowrap; /* テキストが一行で表示されるように設定 */
+    font-family: var(--font-family-ui);
+    color: var(--text-color);
+    transform: rotate(270deg); /* テキストを90度回転 */
+    transform-origin: center; /* テキストの中心を基点に回転 */
+    white-space: nowrap; /* テキストが改行されないようにする */
+    text-align: center; /* テキストを中央揃えにする */
 }
 
 /* 最初にメッセージを非表示に */
