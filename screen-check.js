@@ -5,26 +5,30 @@ document.addEventListener("DOMContentLoaded", function() {
         var tabletLandscapeRecommendation = document.querySelector('.tablet-landscape-recommendation');
         
         // タブレットとスマホの判定
-        var isTablet = window.innerWidth > 600 && window.innerHeight > 700;//タブレットの大きさ
-        var isMobile = window.innerWidth <= 600 || window.innerHeight <= 700;
+        // 新しい基準に基づくデバイス判定
+var isMobilePortrait = window.innerWidth <= 499 || window.innerHeight <= 499;
+var isMobileLandscapeOrTabletPortrait = (window.innerWidth >= 500 && window.innerWidth <= 899) || (window.innerHeight >= 500 && window.innerHeight <= 899);
+var isTabletLandscape = (window.innerWidth >= 900 && window.innerWidth <= 1280) || (window.innerHeight >= 900 && window.innerHeight <= 1280);
 
-        // スマホの場合
-        if (isMobile) {
-            content.style.display = 'none';
-            mobileWarning.style.display = 'block';
-            tabletLandscapeRecommendation.style.display = 'none';
-        } 
-        // タブレットで縦向きの場合
-        else if (isTablet && window.matchMedia("(orientation: portrait)").matches) {
-            content.style.display = 'none';
-            mobileWarning.style.display = 'none';
-            tabletLandscapeRecommendation.style.display = 'block';
-        } else {
-            content.style.display = 'block';
-            mobileWarning.style.display = 'none';
-            tabletLandscapeRecommendation.style.display = 'none';
-        }
-    }
+// スマホの場合（縦横問わず）
+if (isMobilePortrait || (isMobileLandscapeOrTabletPortrait && window.matchMedia("(orientation: landscape)").matches)) {
+    content.style.display = 'none';
+    mobileWarning.style.display = 'block';
+    tabletLandscapeRecommendation.style.display = 'none';
+} 
+// タブレットで縦向きの場合
+else if (isMobileLandscapeOrTabletPortrait && window.matchMedia("(orientation: portrait)").matches) {
+    content.style.display = 'none';
+    mobileWarning.style.display = 'none';
+    tabletLandscapeRecommendation.style.display = 'block';
+} 
+// それ以外（タブレット横向きやPCなど）
+else {
+    content.style.display = 'block';
+    mobileWarning.style.display = 'none';
+    tabletLandscapeRecommendation.style.display = 'none';
+}
+
 
     checkScreenAndToggleContent();
     window.addEventListener('resize', checkScreenAndToggleContent);
